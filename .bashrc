@@ -49,7 +49,7 @@ umask 022
 
 alias c='clear'
 alias cp='cp -i'
-alias du='du -ch -max-depth=1'
+alias du='du -ch'
 alias ls='ls -G'
 alias ll='ls -alrvhFG'
 alias mkdir='mkdir -p'
@@ -58,18 +58,13 @@ alias m='less'
 alias mv='mv -i'
 alias rm='rm -i'
 alias v='vim'
-alias ..='cd ..'
-alias ...='cd ..;cd ..'
+alias screen='screen -D -R'
 
 ### HISTORY
 
 export HISTSIZE=10000
 export HISTFILESIZE=100000
 export HISTIGNORE=ignoredups
-
-### GREP
-export GREP_OPTIONS='--color-auto'
-export GREP_OPTIONS='1;31'
 
 ### SHELL OPTIONS
 shopt -s cdspell
@@ -92,6 +87,12 @@ set -o noclobber
 set -o emacs
 set -o ignoreeof
 set -o notify
+
+
+### FUNCTIONS 
+function psa() {
+    ps auxwww | grep $@ | grep -v grep
+}
 
 if [[ -e ~/.bash_custom ]];then
     source ~/.bash_custom    

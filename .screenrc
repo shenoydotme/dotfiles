@@ -41,3 +41,4 @@ bind            * activity "%c activity -> %n%f %t"
 # Autoload
 screen          -t vim 0 vim
 screen          -t bash 1
+screen          -t irc 2 irssi
