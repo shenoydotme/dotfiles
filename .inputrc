@@ -1,0 +1,18 @@
+
+# Arrows
+"\e[A": previous-history
+"\e[B": next-history
+"\e[C": forward-char
+"\e[D": backward-char
+
+"\eOA": previous-history
+"\e0B": next-history
+"\e0C": forward-char
+"\e0D": backward-char
+
+# Bash
+$if Bash
+"\C-xv": show-bash-version
+"\C-x\C-e": shell-expand-line
+
+" ": self-insert

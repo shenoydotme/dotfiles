@@ -33,11 +33,11 @@ bindkey         "Od" prev
 bindkey         "^[[5;2~" eval "copy" "stuff ^u"
 bindkey         -m "^[[5;2~" stuff ^u
 bindkey         -m "^[[6;2~" stuff ^d
-bindkey         V screen -t 'vim' 0 vim
+#bindkey         V screen -t 'vim' 0 vim
 
 bind            ~ activity "%c activity -> %n%f %t"
 bind            * activity "%c activity -> %n%f %t"
 
 # Autoload
-screen          -t vim 0
+screen          -t vim 0 vim
 screen          -t bash 1
