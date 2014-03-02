@@ -1,0 +1,43 @@
+# .screenrc - Rajesh Shenoy
+
+# Settings
+setenv          LC_CTYPE en_US.UTF-8
+defutf8         on
+altscreen       on
+autodetach      on
+crlf            off
+deflogin        on
+hardcopy_append on
+startup_message off
+vbell           off
+defscrollback   50000
+silencewait     15
+activity        "%c activity -> %n (%t) [%w:%s]~"
+bell            "%c bell -> %n (%t) [%w:%s]~"
+vbell_msg       " *beep* "
+sorendition     "+b gK"
+
+# Term
+term            xterm
+termcapinfo     xterm*|Eterm|mlterm|rxvt 'hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
+defhstatus      "$USER@H | # | t"
+hardstatus      alwayslastline "%{+b kw}[ %H ] %{kw} Load:  %l %-=%{kw} %c %d.%m.%Y"
+caption         always "%{= by}%?%-Lw%?%{+b yb}%n*%t%f %?(%u)%?%{= bw}%?%+Lw%?"
+
+# Escape
+escape	        "^Jj"
+
+# Bindings                                                          
+bindkey         "Oc" next
+bindkey         "Od" prev
+bindkey         "^[[5;2~" eval "copy" "stuff ^u"
+bindkey         -m "^[[5;2~" stuff ^u
+bindkey         -m "^[[6;2~" stuff ^d
+bindkey         V screen -t 'vim' 0 vim
+
+bind            ~ activity "%c activity -> %n%f %t"
+bind            * activity "%c activity -> %n%f %t"
+
+# Autoload
+screen          -t vim 0
+screen          -t bash 1
