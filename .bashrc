@@ -50,15 +50,16 @@ umask 022
 alias c='clear'
 alias cp='cp -i'
 alias du='du -ch'
-alias ls='ls -G'
+alias less='/usr/share/vim/vim73/macros/less.sh'
 alias ll='ls -alrvhFG'
+alias ls='ls -G'
+alias m='less'
 alias mkdir='mkdir -p'
 alias more='less'
-alias m='less'
 alias mv='mv -i'
 alias rm='rm -i'
-alias v='vim'
 alias screen='screen -D -R'
+alias v='vim'
 
 ### HISTORY
 
