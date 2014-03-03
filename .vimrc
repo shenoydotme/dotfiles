@@ -72,12 +72,12 @@ nnoremap <leader>ls :ls<cr>
 nnoremap <leader>b :bp<cr>
 nnoremap <leader>f :bn<cr>
 
-nnoremap <F2> :set nonu!<cr>
-nnoremap <F3> :set rnu!<cr>
-nnoremap <F4> :ls<cr>
-nnoremap <F5> :b<space>
-nnoremap <F6> :e $MYVIMRC<cr>
-nnoremap <F7> :so $MYVIMRC<cr>
+nnoremap <F3> :set nonu!<cr>
+nnoremap <F4> :set rnu!<cr>
+nnoremap <F5> :buffers<cr>:b<space>
+nnoremap <F6> :ls<cr>
+nnoremap <F7> :e $MYVIMRC<cr>
+nnoremap <F8> :so $MYVIMRC<cr>
 nnoremap ; :
 
 
