@@ -9,7 +9,8 @@ ME=`basename $0`
 for FILE in `ls -A ~/dotfiles`;
 do
     if [[ $FILE != $ME &&  ! $FILE =~ .git* 
-                && ! $FILE =~ .*.swp && ! -d $FILE ]];then
+                && ! $FILE =~ .*.swp && ! $FILE =~ README.md
+                && ! -d $FILE ]];then
         echo "Linking ${FILE}"
         if [ -e ~/$FILE ];then
             if [ -h ~/$FILE ];then
