@@ -76,8 +76,9 @@ nnoremap <F3> :set nonu!<cr>
 nnoremap <F4> :set rnu!<cr>
 nnoremap <F5> :buffers<cr>:b<space>
 nnoremap <F6> :ls<cr>
-nnoremap <F7> :e $MYVIMRC<cr>
-nnoremap <F8> :so $MYVIMRC<cr>
+nnoremap <F7> :let @/=""<cr>
+nnoremap <F8> :e $MYVIMRC<cr>
+nnoremap <F9> :so $MYVIMRC<cr>
 nnoremap ; :
 
 
