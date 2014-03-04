@@ -13,8 +13,8 @@ fi
 ### BINDINGS
 
 bindkey -e
-#bindkey '\e[3~' delete-char
-#bindkey '^R' history-incremental-search-backward
+bindkey '\e[3~' delete-char
+bindkey '^R' history-incremental-search-backward
 
 ### ALIASES
 
