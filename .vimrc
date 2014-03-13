@@ -34,6 +34,7 @@ set backspace=indent,eol,start
 set nu
 set lbr
 set tw=500
+set omnifunc=syntaxcomplete#Complete
 
 """ Search
 set hlsearch
@@ -80,4 +81,6 @@ nnoremap <F6> :e $MYVIMRC<cr>
 nnoremap <F7> :so $MYVIMRC<cr>
 nnoremap ; :
 
-
+""" Plugins
+" https://github.com/tpope/vim-pathogen
+execute pathogen#infect()
