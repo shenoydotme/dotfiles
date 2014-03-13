@@ -80,7 +80,6 @@ nnoremap <F6> :ls<cr>
 nnoremap <F7> :let @/=""<cr>
 nnoremap <F8> :e $MYVIMRC<cr>
 nnoremap <F9> :so $MYVIMRC<cr>
-nnoremap ; :
 
 """ Plugins
 " https://github.com/tpope/vim-pathogen
