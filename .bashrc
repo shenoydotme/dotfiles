@@ -1,5 +1,10 @@
 # .bashrc - Rajesh Shenoy
 
+### CUSTOM
+if [[ -e ~/.bash_custom ]];then
+    source ~/.bash_custom    
+fi
+
 ### ENVIRONMENT
 export EDITOR='vim'
 export VISUAL='vim'
@@ -50,15 +55,18 @@ umask 022
 alias c='clear'
 alias cp='cp -i'
 alias du='du -ch'
-alias less='/usr/share/vim/vim73/macros/less.sh'
+alias df='df -h'
+alias less='/usr/share/vim/**/macros/less.sh'
 alias ll='ls -alrvhFG'
-alias ls='ls -G'
+alias ls='ls -G --color=always'
 alias m='less'
 alias mkdir='mkdir -p'
 alias more='less'
 alias mv='mv -i'
 alias rm='rm -i'
-alias screen='screen -D -R'
+alias s='ssh -A'
+alias sa='ssh-add'
+alias screen='screen -a -A -D -R'
 alias v='vim'
 
 ### HISTORY
@@ -95,7 +103,5 @@ function psa() {
     ps auxwww | grep $@ | grep -v grep
 }
 
-if [[ -e ~/.bash_custom ]];then
-    source ~/.bash_custom    
-fi
+
 

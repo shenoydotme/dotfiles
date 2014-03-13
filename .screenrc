@@ -21,7 +21,7 @@ sorendition     "+b gK"
 term            xterm
 termcapinfo     xterm*|Eterm|mlterm|rxvt 'hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
 defhstatus      "$USER@H | # | t"
-hardstatus      alwayslastline "%{+b kw}[ %H ] %{kw} Load:  %l %-=%{kw} %c %d.%m.%Y"
+hardstatus      on "%{+b kw}[ %H ] %{kw} Load:  %l %-=%{kw} %c %d.%m.%Y"
 caption         always "%{= by}%?%-Lw%?%{+b yb}%n*%t%f %?(%u)%?%{= bw}%?%+Lw%?"
 
 # Escape
@@ -41,4 +41,3 @@ bind            * activity "%c activity -> %n%f %t"
 # Autoload
 screen          -t vim 0 vim
 screen          -t bash 1
-screen          -t irc 2 irssi
