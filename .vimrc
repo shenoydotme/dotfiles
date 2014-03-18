@@ -81,7 +81,7 @@ nnoremap <F6> :ls<cr>
 nnoremap <F7> :let @/=""<cr>
 nnoremap <F8> :e $MYVIMRC<cr>
 nnoremap <F9> :so $MYVIMRC<cr>
-nnoremap <F12>:!ctags -a -R -f --fields=+iaSKlmnzt --languages=+C+C++ −−tag−relative=yes --sort=yes .<cr>
+nnoremap <F12>:!ctags -R -f --fields=+iaSKlmnzt --languages=+C+C++ −−tag−relative=yes --sort=yes .<cr>
 
 inoremap <C-space> <C-x><C-o>
 
