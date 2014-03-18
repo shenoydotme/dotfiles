@@ -34,6 +34,7 @@ set backspace=indent,eol,start
 set nu
 set lbr
 set tw=500
+set omnifunc=syntaxcomplete#Complete
 
 """ Search
 set hlsearch
@@ -88,3 +89,7 @@ inoremap <C-space> <C-x><C-o>
 set tags+=~/.vim/tags/cpp
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+""" Plugins
+" https://github.com/tpope/vim-pathogen
+execute pathogen#infect()
