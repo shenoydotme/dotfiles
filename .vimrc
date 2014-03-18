@@ -55,6 +55,7 @@ set hidden
 set ignorecase
 set smartcase
 set nobackup
+set completeopt=menu,preview,menuone,longest
 "set noswapfile
 
 """ Shorcuts
@@ -79,6 +80,11 @@ nnoremap <F6> :ls<cr>
 nnoremap <F7> :let @/=""<cr>
 nnoremap <F8> :e $MYVIMRC<cr>
 nnoremap <F9> :so $MYVIMRC<cr>
-nnoremap ; :
+nnoremap <F12>:!ctags -a -R -f --fields=+iaSKlmnzt --languages=+C+C++ −−tag−relative=yes --sort=yes .<cr>
 
+inoremap <C-space> <C-x><C-o>
 
+""" Tags
+set tags+=~/.vim/tags/cpp
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
