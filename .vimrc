@@ -64,7 +64,7 @@ set completeopt=menu,preview,menuone,longest
 let mapleader = ","
 let g:mapleader = ","
 set pastetoggle=<F2>
-
+noremap <leader> \ ,
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>wq :wq!<cr>
 nnoremap <leader>q :q!<cr>
@@ -82,8 +82,6 @@ nnoremap <F7> :let @/=""<cr>
 nnoremap <F8> :e $MYVIMRC<cr>
 nnoremap <F9> :so $MYVIMRC<cr>
 nnoremap <F12>:!ctags -R -f --fields=+iaSKlmnzt --languages=+C+C++ −−tag−relative=yes --sort=yes .<cr>
-
-inoremap <C-space> <C-x><C-o>
 
 """ Tags
 set tags+=~/.vim/tags/cpp
