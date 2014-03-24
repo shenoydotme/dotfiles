@@ -64,7 +64,7 @@ set completeopt=menu,preview,menuone,longest
 let mapleader = ","
 let g:mapleader = ","
 set pastetoggle=<F2>
-noremap <leader> \ ,
+noremap \ ,
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>wq :wq!<cr>
 nnoremap <leader>q :q!<cr>
