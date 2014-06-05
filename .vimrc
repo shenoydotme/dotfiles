@@ -59,7 +59,7 @@ set nobackup
 set completeopt=menu,preview,menuone,longest
 "set noswapfile
 
-""" Shorcuts
+""" Shortcuts
 
 let mapleader = ","
 let g:mapleader = ","
@@ -81,7 +81,7 @@ nnoremap <F6> :ls<cr>
 nnoremap <F7> :let @/=""<cr>
 nnoremap <F8> :e $MYVIMRC<cr>
 nnoremap <F9> :so $MYVIMRC<cr>
-nnoremap <F12>:!ctags -R -f --fields=+iaSKlmnzt --languages=+C+C++ −−tag−relative=yes --sort=yes .<cr>
+nnoremap <F10> :!ctags -R -f ~/.vim/tags/cpp  --fields=+iSKlmnzt --languages=+C,+C++ --sort=yes --exclude=kojo --exclude=ztu /work/rshenoy/git/algo/brama<cr>
 
 """ Tags
 set tags+=~/.vim/tags/cpp
