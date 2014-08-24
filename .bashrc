@@ -11,6 +11,9 @@ export VISUAL='vim'
 export PAGER='less'
 export LESS='-R'
 
+#PYTHON
+export PYTHONSTARTUP=~/.pythonrc
+
 ### INTERACTIVE
 if [[ $- != *i* ]]; then
     return
@@ -31,6 +34,7 @@ if [ -x /usr/bin/tput ]; then
     fi
   fi
 fi
+stty erase ^?
 
 ### PROMPT
 
