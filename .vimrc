@@ -36,6 +36,13 @@ set lbr
 set tw=500
 set omnifunc=syntaxcomplete#Complete
 
+""" Folding
+
+set foldmethod=syntax
+set foldnestmax=10
+set nofoldenable
+set foldlevel=0
+
 """ Search
 set hlsearch
 set incsearch
@@ -74,14 +81,13 @@ nnoremap <leader>ls :ls<cr>
 nnoremap <leader>b :bp<cr>
 nnoremap <leader>f :bn<cr>
 
-nnoremap <F3> :set nonu!<cr>
-nnoremap <F4> :set rnu!<cr>
+au Filetype go set makeprg=go\ build\ ./...
+nnoremap <F4> :make<CR>:copen<CR>
 nnoremap <F5> :buffers<cr>:b<space>
 nnoremap <F6> :ls<cr>
 nnoremap <F7> :let @/=""<cr>
 nnoremap <F8> :e $MYVIMRC<cr>
 nnoremap <F9> :so $MYVIMRC<cr>
-nnoremap <F10> :!ctags -R -f ~/.vim/tags/cpp  --fields=+iSKlmnzt --languages=+C,+C++ --sort=yes --exclude=kojo --exclude=ztu /work/rshenoy/git/algo/brama<cr>
 
 """ Tags
 set tags+=~/.vim/tags/cpp
@@ -94,3 +100,18 @@ execute pathogen#infect()
 
 """ Colors
 let g:molokai_original = 1
+
+""" Go Specific
+
+function! s:GoVet()
+    cexpr system("go vet " . shellescape(expand('%')))
+    copen
+endfunction
+command! GoVet :call s:GoVet()
+
+
+function! s:GoLint()
+    cexpr system("golint " . shellescape(expand('%')))
+    copen
+endfunction
+command! GoLint :call s:GoLint()
