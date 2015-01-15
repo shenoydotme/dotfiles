@@ -78,21 +78,48 @@ nnoremap <leader>q :q!<cr>
 nnoremap <leader>e<space> :e<space>
 nnoremap <leader>a<space> :args<space>
 nnoremap <leader>ls :ls<cr>
-nnoremap <leader>b :bp<cr>
-nnoremap <leader>f :bn<cr>
+nnoremap <leader>p :bp<cr>
+nnoremap <leader>n :bn<cr>
+nnoremap ,, <C-O>
+nnoremap .. <C-I>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
-au Filetype go set makeprg=go\ build\ ./...
-nnoremap <F4> :make<CR>:copen<CR>
 nnoremap <F5> :buffers<cr>:b<space>
 nnoremap <F6> :ls<cr>
 nnoremap <F7> :let @/=""<cr>
-nnoremap <F8> :e $MYVIMRC<cr>
-nnoremap <F9> :so $MYVIMRC<cr>
+nnoremap <F8> :TagbarToggle<CR>
+nnoremap <F9> :e $MYVIMRC<cr>
 
-""" Tags
-set tags+=~/.vim/tags/cpp
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let g:neocomplete#enable_at_startup = 1
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+
+let g:go_play_open_browser = 0
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
+let g:go_fmt_command = "goimports"
 
 """ Plugins
 " https://github.com/tpope/vim-pathogen

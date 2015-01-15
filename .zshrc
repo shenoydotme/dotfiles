@@ -6,6 +6,10 @@ if [[ -e ~/.zsh_custom ]]; then
     . ~/.zsh_custom
 fi
 
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
 ### INTERACTIVE
 
 [[ -o interactive ]] || return
@@ -53,4 +57,7 @@ setopt INC_APPEND_HISTORY
 function psa() {
     ps auxwww | grep $@ | grep -v grep
 }
+
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
