@@ -2,10 +2,6 @@
 
 ### CUSTOM
 
-if [[ -e ~/.zsh_custom ]]; then
-    . ~/.zsh_custom
-fi
-
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
@@ -26,9 +22,7 @@ alias c='clear'
 alias cp='cp -i'
 alias du='du -ch'
 alias df='df -h'
-#alias less='/usr/share/vim/**/macros/less.sh'
-alias ll='ls -alrvhFG'
-alias ls='ls -G --color=always'
+alias ll='ls -alrvFG'
 alias m='less'
 alias mkdir='mkdir -p'
 alias more='less'
@@ -39,6 +33,7 @@ alias sa='ssh-add'
 alias sg="ssh-agent $SHELL"
 alias screen='screen -a -A -D -R'
 alias v='vim'
+alias format_json='python -mjson.tool'
 
 ### OPTIONS
 
@@ -58,6 +53,16 @@ function psa() {
     ps auxwww | grep $@ | grep -v grep
 }
 
+### ENV
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+EDITOR=vim
+VISUAL=vim
+PAGER=less
 
+if [[ -e ~/.zsh_custom ]]; then
+    . ~/.zsh_custom
+fi
+
+
+# added by travis gem
+[ -f /Users/rajeshshenoy/.travis/travis.sh ] && source /Users/rajeshshenoy/.travis/travis.sh
