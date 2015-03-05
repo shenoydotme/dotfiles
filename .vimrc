@@ -54,8 +54,7 @@ set novisualbell
 set tm=500
 
 """ Colors
-colorscheme delek
-syntax enable
+"syntax enable
 
 """ Editing
 set encoding=utf8
@@ -122,7 +121,8 @@ let g:go_fmt_command = "goimports"
 execute pathogen#infect()
 
 """ Colors
-let g:molokai_original = 1
+colorscheme delek
+syntax on
 
 """ Go Specific
 
