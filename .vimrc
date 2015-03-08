@@ -53,9 +53,6 @@ set noerrorbells
 set novisualbell
 set tm=500
 
-""" Colors
-"syntax enable
-
 """ Editing
 set encoding=utf8
 set hidden
@@ -66,7 +63,6 @@ set completeopt=menu,preview,menuone,longest
 "set noswapfile
 
 """ Shortcuts
-
 let mapleader = ","
 let g:mapleader = ","
 set pastetoggle=<F2>
@@ -88,6 +84,7 @@ nnoremap <F6> :ls<cr>
 nnoremap <F7> :let @/=""<cr>
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <F9> :e $MYVIMRC<cr>
+nnoremap <F10> :so $MYVIMRC<cr>
 
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
