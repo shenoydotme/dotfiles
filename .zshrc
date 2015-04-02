@@ -31,7 +31,7 @@ alias rm='rm -i'
 alias s='ssh -A'
 alias sa='ssh-add'
 alias sg="ssh-agent $SHELL"
-alias screen='screen -a -A -D -R'
+#alias screen='screen -a -A -D -R'
 alias v='vim'
 alias format_json='python -mjson.tool'
 

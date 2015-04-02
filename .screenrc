@@ -18,8 +18,12 @@ vbell_msg       " *beep* "
 sorendition     "+b gK"
 
 # Term
-term            xterm
-termcapinfo     xterm*|Eterm|mlterm|rxvt 'hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
+attrcolor       b ".I"
+termcapinfo     xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#termcapinfo     xterm|xterms|xs|rxvt ti@:te@
+#termcapinfo     xterm*|Eterm|mlterm|rxvt 'hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
+term            screen-256color
+defbce          "on"
 defhstatus      "$USER@H | # | t"
 hardstatus      on "%{+b kw}[ %H ] %{kw} Load:  %l %-=%{kw} %c %d.%m.%Y"
 caption         always "%{= by}%?%-Lw%?%{+b yb}%n*%t%f %?(%u)%?%{= bw}%?%+Lw%?"
