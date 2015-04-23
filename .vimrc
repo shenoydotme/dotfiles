@@ -18,6 +18,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class,*.obj,*.o
 set autoread
 
 """ Indent 
+filetype on
 filetype plugin on
 filetype indent on
 set ffs=unix,mac,dos
@@ -37,6 +38,8 @@ set tw=500
 set omnifunc=syntaxcomplete#Complete
 autocmd Filetype go setlocal ts=4 sts=4 sw=4
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype erb setlocal ts=2 sts=2 sw=2
+autocmd Filetype html.erb setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
@@ -69,7 +72,7 @@ set completeopt=menu,preview,menuone,longest
 """ Shortcuts
 let mapleader = ","
 let g:mapleader = ","
-set pastetoggle=<F2>
+
 noremap \ ,
 nnoremap <leader>w :w!<cr>
 nnoremap <leader>wq :wq!<cr>
@@ -83,6 +86,9 @@ nnoremap ,, <C-O>
 nnoremap .. <C-I>
 nnoremap <C-n> :NERDTreeToggle<CR>
 
+set pastetoggle=<F2>
+nnoremap <F3> :set nonu!<cr>
+nnoremap <F4> :buffers<cr>
 nnoremap <F5> :buffers<cr>:b<space>
 nnoremap <F6> :ls<cr>
 nnoremap <F7> :let @/=""<cr>
