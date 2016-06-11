@@ -66,7 +66,7 @@ set hidden
 set ignorecase
 set smartcase
 set nobackup
-set completeopt=menu,preview,menuone,longest
+set completeopt=menu,preview,longest
 "set noswapfile
 
 """ Shortcuts
@@ -116,8 +116,18 @@ au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
-let g:go_play_open_browser = 0
 let g:go_fmt_command = "goimports"
+let g:go_def_mode = "godef"
+let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_register_as_syntastic_checker = 1
+let g:ycm_disable_for_files_larger_than_kb = 18
+
+"map <c-f> :call JsBeautify()<cr>
+"autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+"autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+"autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+"autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+"autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
 """ Plugins
 " https://github.com/tpope/vim-pathogen
@@ -127,17 +137,3 @@ execute pathogen#infect()
 syntax enable
 colorscheme molokai
 
-""" Go Specific
-
-function! s:GoVet()
-    cexpr system("go vet " . shellescape(expand('%')))
-    copen
-endfunction
-command! GoVet :call s:GoVet()
-
-
-function! s:GoLint()
-    cexpr system("golint " . shellescape(expand('%')))
-    copen
-endfunction
-command! GoLint :call s:GoLint()
