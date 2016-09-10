@@ -15,6 +15,8 @@ fi
 bindkey -e
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
+bindkey '^[[1;9C' forward-word
+bindkey '^[[1;9D' backward-word
 
 ### ALIASES
 
@@ -63,6 +65,4 @@ if [[ -e ~/.zsh_custom ]]; then
     . ~/.zsh_custom
 fi
 
-
-# added by travis gem
-[ -f /Users/rajeshshenoy/.travis/travis.sh ] && source /Users/rajeshshenoy/.travis/travis.sh
+export TERM=xterm-256color

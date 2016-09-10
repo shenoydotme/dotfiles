@@ -109,11 +109,4 @@ function psa() {
 
 
 
-
-export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# added by travis gem
-[ -f /Users/rajeshshenoy/.travis/travis.sh ] && source /Users/rajeshshenoy/.travis/travis.sh
+export TERM=xterm-256color

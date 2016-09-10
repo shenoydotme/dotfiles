@@ -13,8 +13,10 @@ vbell           off
 defscrollback   50000
 silencewait     15
 activity        "%c activity -> %n (%t) [%w:%s]~"
-bell            "%c bell -> %n (%t) [%w:%s]~"
-vbell_msg       " *beep* "
+bell            off
+#"%c bell -> %n (%t) [%w:%s]~"
+vbell_msg       off
+#" *beep* "
 sorendition     "+b gK"
 
 # Term

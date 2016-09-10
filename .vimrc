@@ -121,7 +121,7 @@ au Filetype go nmap <leader><C-m> :cp<CR>
 au Filetype go nmap <leader>a :cclose<CR>
 
 let g:go_fmt_command = "goimports"
-"let g:go_def_mode = "godef"
+let g:go_def_mode = "godef"
 let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_disable_for_files_larger_than_kb = 18
@@ -141,21 +141,34 @@ let g:go_metalinter_autosave_enabled = ['vet']
 
 let g:go_list_type = "quickfix"
 
-let g:syntastic_go_checkers = ['go', 'gofmt']
+map <c-f> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
+""" React JSX
+let g:jsx_ext_required = 0
+
+""" Plugins
+" https://github.com/tpope/vim-pathogen
+execute pathogen#infect()
+
+""" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["html", "js"] }
+let g:syntastic_go_checkers = ['go', 'gofmt']
 let g:syntastic_aggregate_errors = 1
-
-""" Plugins
-" https://github.com/tpope/vim-pathogen
-execute pathogen#infect()
 
 """ Colors
 syntax enable
