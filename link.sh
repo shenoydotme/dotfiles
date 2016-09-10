@@ -8,7 +8,7 @@ ME=`basename $0`
 
 for FILE in `ls -A ~/dotfiles`;
 do
-    if [[ $FILE != $ME &&  ! $FILE =~ .git* 
+    if [[ $FILE != $ME &&  ! $FILE =~ .gitignore && ! $FILE == .git
                 && ! $FILE =~ .*.swp && ! $FILE =~ README.md
                 && ! -d $FILE ]];then
         echo "Linking ${FILE}"
