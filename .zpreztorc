@@ -142,7 +142,7 @@ zstyle ':prezto:module:prompt' theme 'steeef'
  zstyle ':prezto:module:syntax-highlighting' styles \
    'builtin' 'fg=orange' \
    'command' 'fg=green' \
-   'function' 'fg=white'
+   'function' 'fg=yellow'
 
 #
 # Terminal
