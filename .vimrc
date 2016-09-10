@@ -68,6 +68,7 @@ set smartcase
 set nobackup
 set completeopt=menu,preview,longest
 "set noswapfile
+set autowrite
 
 """ Shortcuts
 let mapleader = ","
@@ -102,32 +103,55 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <leader>s <Plug>(go-implements)
+au FileType go nmap <leader>i <Plug>(go-info)
+au FileType go nmap <leader>gd <Plug>(go-doc)
+au FileType go nmap <leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <leader>ds <Plug>(go-def-split)
+au FileType go nmap <leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <leader>dt <Plug>(go-def-tab)
+au FileType go nmap <leader>e <Plug>(go-rename)
+au Filetype go nmap <leader><C-n> :cn<CR>
+au Filetype go nmap <leader><C-m> :cp<CR>
+au Filetype go nmap <leader>a :cclose<CR>
 
 let g:go_fmt_command = "goimports"
-let g:go_def_mode = "godef"
+"let g:go_def_mode = "godef"
 let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_disable_for_files_larger_than_kb = 18
+let g:go_snippet_case_type = "camelcase"
 
-"map <c-f> :call JsBeautify()<cr>
-"autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-"autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
-"autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
-"autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-"autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet']
+
+let g:go_list_type = "quickfix"
+
+let g:syntastic_go_checkers = ['go', 'gofmt']
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_aggregate_errors = 1
 
 """ Plugins
 " https://github.com/tpope/vim-pathogen
