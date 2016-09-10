@@ -1,0 +1,13 @@
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[user]
+	name = Rajesh Shenoy
+	email = shenoybr@gmail.com
+[push]
+	default = matching
+[credential]
+	helper = osxkeychain
+[alias]
+    pretty = log --graph --pretty=format:'%Cred%h%Creset %C(cyan)%an%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
