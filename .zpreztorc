@@ -76,13 +76,13 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #
 
 # Set the query found color.
-# zstyle ':prezto:module:history-substring-search:color' found ''
+zstyle ':prezto:module:history-substring-search:color' found ''
 
 # Set the query not found color.
-# zstyle ':prezto:module:history-substring-search:color' not-found ''
+zstyle ':prezto:module:history-substring-search:color' not-found ''
 
 # Set the search globbing flags.
-# zstyle ':prezto:module:history-substring-search' globbing-flags ''
+zstyle ':prezto:module:history-substring-search' globbing-flags ''
 
 #
 # Pacman
@@ -112,7 +112,7 @@ zstyle ':prezto:module:prompt' theme 'steeef'
 #
 
 # Auto start a session when Zsh is launched in a local terminal.
-# zstyle ':prezto:module:screen:auto-start' local 'yes'
+zstyle ':prezto:module:screen:auto-start' local 'yes'
 
 # Auto start a session when Zsh is launched in a SSH connection.
 # zstyle ':prezto:module:screen:auto-start' remote 'yes'
@@ -122,7 +122,7 @@ zstyle ':prezto:module:prompt' theme 'steeef'
 #
 
 # Set the SSH identities to load into the agent.
- zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
+zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
 
 #
 # Syntax Highlighting
@@ -130,7 +130,7 @@ zstyle ':prezto:module:prompt' theme 'steeef'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
- zstyle ':prezto:module:syntax-highlighting' highlighters \
+zstyle ':prezto:module:syntax-highlighting' highlighters \
    'main' \
    'brackets' \
    'pattern' \
@@ -139,7 +139,7 @@ zstyle ':prezto:module:prompt' theme 'steeef'
    'root'
 
 # Set syntax highlighting styles.
- zstyle ':prezto:module:syntax-highlighting' styles \
+zstyle ':prezto:module:syntax-highlighting' styles \
    'builtin' 'fg=orange' \
    'command' 'fg=green' \
    'function' 'fg=yellow'

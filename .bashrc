@@ -101,12 +101,9 @@ set -o emacs
 set -o ignoreeof
 set -o notify
 
-
 ### FUNCTIONS 
 function psa() {
     ps auxwww | grep $@ | grep -v grep
 }
-
-
 
 export TERM=xterm-256color
