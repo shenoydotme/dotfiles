@@ -6,7 +6,6 @@ defutf8         on
 altscreen       on
 autodetach      on
 crlf            off
-deflogin        on
 hardcopy_append on
 startup_message off
 vbell           off
@@ -27,7 +26,7 @@ termcapinfo     xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 term            screen-256color
 defbce          "on"
 defhstatus      "$USER@H | # | t"
-hardstatus      on "%{+b kw}[ %H ] %{kw} Load:  %l %-=%{kw} %c %d.%m.%Y"
+hardstatus      on
 caption         always "%{= by}%?%-Lw%?%{+b yb}%n*%t%f %?(%u)%?%{= bw}%?%+Lw%?"
 shell           "/bin/zsh"
 
