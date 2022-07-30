@@ -17,3 +17,4 @@ $if Bash
 "\C-x\C-e": shell-expand-line
 
 " ": self-insert
+$endif
